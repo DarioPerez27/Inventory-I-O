@@ -46,6 +46,23 @@ int main() {
 
     free_list(&inventory);
     return 0;
+
+    Item* load_from_file(const char *filename){
+
+
+        //this block is meant to get the file path for the file I/O
+        char *userprofile[512] = getenv("USERPROFILE");
+        char path[512]; // stores path to file as pointer path, making it simple
+        char temp_path[512];
+        strcpy(path, userprofile);
+        strcpy(temp_path, userprofile);
+        strcat(path, "\AppData\Roaming\inventory.dat");
+        strcat(temp_path, "\AppData\Roaming\temp.dat");
+        
+    
+        FILE* store_inv = fopen(path, "a"); // Opens file to append rather than write over
+
+    }
 }
 
 // TODO: Implement functions such as add_item(), view_items(), etc.
